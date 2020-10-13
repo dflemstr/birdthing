@@ -1,0 +1,36 @@
+[tool.poetry]
+name = "birdthing"
+version = "0.1.0"
+description = ""
+authors = ["David Flemström <david.flemstrom@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "~3.7"
+picamera = "^1.13"
+tensorflow = [
+    { url = "https://github.com/leigh-johnson/Tensorflow-bin/releases/download/v2.2.0/tensorflow-2.2.0-cp37-cp37m-linux_armv7l.whl", markers = "python_version ~= '3.7' and platform_machine == 'armv7l'" },
+    { version = "2.2.0", markers = "python_version ~= '3.7' and platform_machine == 'x86_64'" },
+]
+tflite_runtime = [
+    { url = "https://dl.google.com/coral/python/tflite_runtime-2.1.0.post1-cp37-cp37m-linux_armv7l.whl", markers = "python_version ~= '3.7' and platform_machine == 'armv7l'" },
+    { url = "https://dl.google.com/coral/python/tflite_runtime-2.1.0.post1-cp37-cp37m-linux_x86_64.whl", markers = "python_version ~= '3.7' and platform_machine == 'x86_64'" },
+]
+numpy = "^1.19.2"
+pillow = "^7.2.0"
+scikit-image = "^0.17.2"
+adafruit-circuitpython-servokit = "^1.3.0"
+"RPi.GPIO" = { version = "^0.7.0", markers = "platform_machine == 'armv7l'" }
+click = "^7.1.2"
+simple-pid = "^0.2.4"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+black = "^20.8b1"
+poetry = "^1.1.1"
+
+[tool.poetry.scripts]
+birdthing = 'birdthing:main'
+
+[build-system]
+requires = ["poetry>=1.1.1"]
+build-backend = "poetry.masonry.api"
