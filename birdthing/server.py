@@ -33,7 +33,7 @@ def run(
     http_server = Server(
         frame, new_frame, target_offset_x, target_offset_y, address, Handler
     )
-    print(f"running server on {address[0]}:{address[1]}")
+    logging.info(f"running server on {address[0]}:{address[1]}")
     http_server.serve_forever()
 
 

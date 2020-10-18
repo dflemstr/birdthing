@@ -13,7 +13,7 @@ from birdthing.visualization import (
     draw_keypoints_on_image_array,
 )
 
-DATA_DIR = path.abspath(path.join(__file__, "..", "..", "data"))
+DATA_DIR = path.join(path.dirname(__file__), "data")
 LABEL_MAP = create_category_index_from_labelmap(
     path.join(DATA_DIR, "mscoco_label_map.pbtxt"), use_display_name=True
 )

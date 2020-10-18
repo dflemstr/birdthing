@@ -1,3 +1,4 @@
+import time
 from multiprocessing import Manager, Process
 from typing import Sequence
 
@@ -78,6 +79,12 @@ def run(track: Sequence[str]):
 
         for process in processes:
             process.start()
+
+        while all(process.is_alive() for process in processes):
+            time.sleep(10)
+
+        for process in processes:
+            process.terminate()
 
         for process in processes:
             process.join()

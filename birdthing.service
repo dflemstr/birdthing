@@ -1,0 +1,10 @@
+[Unit]
+Description=Automatic bird-thing photography
+
+[Service]
+Restart=on-failure
+RestartSec=5s
+ExecStart=%h/.local/bin/birdthing
+
+[Install]
+WantedBy=default.target

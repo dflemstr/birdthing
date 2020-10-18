@@ -1,3 +1,4 @@
+import logging
 from datetime import datetime
 from multiprocessing import Condition, Array
 from pathlib import Path
@@ -26,3 +27,4 @@ def run(frame: Array, target_in_sight: Condition):
             Image.frombytes("RGB", camera.RESOLUTION, frame.get_obj()).save(
                 dest, format="jpeg"
             )
+            logging.info(f'archived image {dest}')
